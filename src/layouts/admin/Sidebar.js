@@ -5,34 +5,36 @@ import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
 
+    const name = localStorage.getItem('auth_name');
+
     return (
         <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-            <div className="sb-sidenav-menu">
+            <div className="sb-sidenav-menu overflow-hidden">
                 <div className="nav">
                     <div className="sb-sidenav-menu-heading">Core</div>
                     <Link className="nav-link" to="/admin/dashboard">
-                        <div className="sb-nav-link-icon"><i className="bi bi-speedometer2"></i></div>
+                        <div className="sb-nav-link-icon"><i className="bi bi-clipboard-data"></i></div>
                         Dashboard
                     </Link>
                     <Link className="nav-link" to="/admin/add-category">
-                        <div className="sb-nav-link-icon"><i className="bi bi-speedometer2"></i></div>
+                        <div className="sb-nav-link-icon"><i className="bi bi-plus-circle-dotted"></i></div>
                         Add Category
                     </Link>
                     <Link className="nav-link" to="/admin/view-category">
-                        <div className="sb-nav-link-icon"><i className="bi bi-speedometer2"></i></div>
+                        <div className="sb-nav-link-icon"><i className="bi bi-view-list"></i></div>
                         View Category
                     </Link>
 
                     <div className="sb-sidenav-menu-heading">Interface</div>
-                    <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div className="sb-nav-link-icon"><i className="bi bi-speedometer2"></i></div>
-                        Layouts
+                    <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
+                        <div className="sb-nav-link-icon"><i className="bi bi-shop"></i></div>
+                        Products
                         <div className="sb-sidenav-collapse-arrow"><i className="bi bi-caret-down"></i></div>
                     </Link>
-                    <div className="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <div className="collapse" id="collapseProduct" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav className="sb-sidenav-menu-nested nav">
-                            <Link className="nav-link" to="layout-static.html">Static Navigation</Link>
-                            <Link className="nav-link" to="layout-sidenav-light.html">Light Sidenav</Link>
+                            <Link className="nav-link" to="/admin/add-product">Add Product</Link>
+                            <Link className="nav-link" to="/admin/view-product">View Product</Link>
                         </nav>
                     </div>
 
@@ -96,7 +98,7 @@ const Sidebar = () => {
             </div>
             <div className="sb-sidenav-footer">
                 <div className="small">Logged in as:</div>
-                Admin
+                {name}
             </div>
         </nav>
         
