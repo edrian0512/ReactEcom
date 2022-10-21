@@ -69,7 +69,7 @@ function ViewCategory() {
             <div className="card mt-4">
                 <div className="card-header">
                     <h4>Category List
-                        <Link to="/admin/add-category" className="btn btn-dark btn-sm float-end">Add Category</Link>
+                        <Link to="/admin/add-category" className="btn btn-warning btn-sm float-end">Add Category</Link>
                     </h4>
                 </div>
                 <div className="card-body text-center">
@@ -78,7 +78,7 @@ function ViewCategory() {
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Brand</th>
+                                <th>Slug</th>
                                 <th>Status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
